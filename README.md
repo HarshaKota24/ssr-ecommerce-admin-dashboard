@@ -175,7 +175,7 @@ A short demo video (3–5 minutes) demonstrating:
 ```
 
 ```
-Video Link: <add-video-link-here>
+Video Link: https://drive.google.com/file/d/1EUqC8rEyNAoryMlj9OsCU2FqMoMuCLmn/view?usp=sharing
 ```
 
 ---
