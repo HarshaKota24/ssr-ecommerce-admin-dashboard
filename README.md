@@ -2,7 +2,7 @@
 
 ##  Project Overview
 
-This project is a **Server-Side Rendered (SSR) administrative dashboard** for managing products in an e-commerce system. It is built using **Next.js (App Router)** and demonstrates real-world practices such as authentication, server-side data fetching, image uploads, and data visualization.
+This project is a **Server-Side Rendered (SSR) administrative dashboard** for managing products in an e-commerce system. It is built using **Next.js (App Router)** and demonstrates features such as authentication, server-side data fetching, image uploads, and data visualization.
 
 The dashboard is **accessible only to admins** and provides tools to manage products and analyze inventory metrics.
 
@@ -10,7 +10,7 @@ The dashboard is **accessible only to admins** and provides tools to manage prod
 
 ##  Objective
 
-- Build a **real-world admin dashboard** using SSR
+- Build a **real-world admin dashboard** using Server side rendering
 - Ensure **fast page loads** and good SEO characteristics
 - Implement **secure admin-only access**
 - Support full **product lifecycle management**
@@ -102,7 +102,7 @@ Password: admin123
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone <your-github-repo-url>
+git clone https://github.com/HarshaKota24/ssr-ecommerce-admin-dashboard.git
 cd <project-folder>
 ```
 
@@ -156,7 +156,7 @@ Deployment setup includes:
 - Cloudinary for image uploads
 
 ```
-Live URL: https://ssr-ecommerce-admin-dashboard.vercel.app
+Live URL: https://ssr-ecommerce-admin-dashboard-jade.vercel.app/dashboard
 ```
 
 ---
