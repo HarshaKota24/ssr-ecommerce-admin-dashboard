@@ -17,18 +17,12 @@ export default function Login() {
     setError("");
 
     try {
-      const result = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
-      });
+     await signIn("credentials", {
+  email,
+  password,
+  callbackUrl: "/dashboard",
+});
 
-      if (result?.error) {
-        setError("Invalid email or password");
-        setLoading(false);
-      } else {
-        router.push("/dashboard");
-      }
     } catch {
       setError("An unexpected error occurred");
       setLoading(false);
