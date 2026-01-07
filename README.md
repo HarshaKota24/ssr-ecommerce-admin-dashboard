@@ -154,10 +154,8 @@ Deployment setup includes:
 - Environment variables configured in Vercel dashboard
 - MongoDB Atlas for production database
 - Cloudinary for image uploads
-
-```
-Live URL: https://ssr-ecommerce-admin-dashboard-jade.vercel.app/dashboard
-```
+  
+Live URL: ```https://ssr-ecommerce-admin-dashboard-jade.vercel.app/dashboard```
 
 ---
 
@@ -174,9 +172,9 @@ A short demo video (3–5 minutes) demonstrating:
 - Logout
 ```
 
-```
-Video Link: https://drive.google.com/file/d/1EUqC8rEyNAoryMlj9OsCU2FqMoMuCLmn/view?usp=sharing
-```
+
+Video Link: ```https://drive.google.com/file/d/1EUqC8rEyNAoryMlj9OsCU2FqMoMuCLmn/view?usp=sharing```
+
 
 ---
 
