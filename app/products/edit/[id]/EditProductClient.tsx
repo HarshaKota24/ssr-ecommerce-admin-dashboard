@@ -3,10 +3,15 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { productSchema } from "@/lib/schema";
+import Toast from "@/app/components/toast";
 
 export default function EditProductClient({ product }: any) {
   const [p, setP] = useState(product);
-  const [err, setErr] = useState("");
+  const [toast, setToast] = useState<{
+  msg: string;
+  type: "error" | "success";
+} | null>(null);
+
   const [uploading, setUploading] = useState(false);
   const router = useRouter();
 
@@ -27,11 +32,22 @@ export default function EditProductClient({ product }: any) {
   }
 
   async function save() {
-    setErr("");
+    const payload = {
+  name: p.name,
+  description: p.description,
+  price: p.price,
+  stock: p.stock,
+  rating: p.rating,
+  image: p.image,
+};
 
-    const parsed = productSchema.safeParse(p);
+const parsed = productSchema.safeParse(payload);
+
     if (!parsed.success) {
-      setErr(parsed.error.issues[0].message);
+      setToast({
+  msg: parsed.error.issues[0].message,
+  type: "error",
+});
       return;
     }
 
@@ -41,23 +57,39 @@ export default function EditProductClient({ product }: any) {
       body: JSON.stringify(p),
     });
 
-    // if (!res.ok) {
-    //   setErr("Failed to update product");
-    //   return;
-    // }
+    if (!res.ok) {
+     setToast({
+  msg: "Failed to update product",
+  type: "error",
+});
+return;
+    }
 
-    router.push("/products");
+    setToast({
+  msg: "Product updated successfully",
+  type: "success",
+});
+
+setTimeout(() => {
+  router.push("/products");
+}, 800);
+
   }
 
   return (
+    <>
+  <Toast
+    message={toast?.msg || ""}
+    type={toast?.type}
+    onClose={() => setToast(null)}
+  />
+
     <div className="max-w-2xl bg-white p-6 rounded shadow">
       <h1 className="text-2xl font-bold mb-6">
         Edit Product
       </h1>
 
-      {err && (
-        <p className="text-red-600 mb-4">{err}</p>
-      )}
+      
 
       {/* NAME */}
       <label className="block mb-2 font-medium">
@@ -181,5 +213,6 @@ export default function EditProductClient({ product }: any) {
         </button>
       </div>
     </div>
+    </>
   );
 }

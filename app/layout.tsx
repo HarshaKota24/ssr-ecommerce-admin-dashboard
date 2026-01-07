@@ -1,6 +1,6 @@
 import "./globals.css";
 import { getServerSession } from "next-auth";
-import Sidebar from "./components/sidebar";
+import ClientLayout from "./components/ClientLayout";
 
 export default async function RootLayout({
   children,
@@ -9,14 +9,11 @@ export default async function RootLayout({
 }) {
   const session = await getServerSession();
 
-return (
+  return (
     <html lang="en">
       <body className="min-h-screen bg-gray-100">
         {session ? (
-          <div className="flex min-h-screen">
-            <Sidebar />
-            <main className="flex-1 p-8 ml-64">{children}</main>
-          </div>
+          <ClientLayout>{children}</ClientLayout>
         ) : (
           <main>{children}</main>
         )}

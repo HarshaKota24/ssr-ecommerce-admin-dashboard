@@ -156,7 +156,7 @@ Deployment setup includes:
 - Cloudinary for image uploads
 
 ```
-Live URL: <add-your-deployed-link-here>
+Live URL: https://ssr-ecommerce-admin-dashboard.vercel.app
 ```
 
 ---

@@ -91,7 +91,6 @@ export default function NewProduct() {
           </label>
           <input
             className="w-full border p-2 rounded mb-4"
-            type="number"
             value={p.price}
             onChange={(e) =>
               setP({ ...p, price: +e.target.value })
@@ -103,7 +102,6 @@ export default function NewProduct() {
           </label>
           <input
             className="w-full border p-2 rounded"
-            type="number"
             min={0}
             max={5}
             value={p.rating}
@@ -122,7 +120,6 @@ export default function NewProduct() {
           </label>
           <input
             className="w-full border p-2 rounded mb-4"
-            type="number"
             value={p.stock}
             onChange={(e) =>
               setP({ ...p, stock: +e.target.value })
